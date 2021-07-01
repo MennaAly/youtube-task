@@ -1,0 +1,8 @@
+@use './variables';
+
+@mixin font-typography($minFont,$maxFont,$minBreakpoint,$maxBreakpoint) {
+    font-size: calc(#{$minFont}px + (#{$maxFont} - #{$minFont}) * (100vw - #{$minBreakpoint}px) / (#{$maxBreakpoint} - #{$minBreakpoint})) !important;
+}
+@mixin for-desktop {
+  @media only screen and (min-width: #{variables.$desktop_min_break_point}px) { @content; }
+}

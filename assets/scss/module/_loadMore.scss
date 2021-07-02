@@ -1,0 +1,52 @@
+@use "../base/colors";
+@use "../base/mixins";
+
+
+.load-more-desktop{
+    display: none;
+    @include for-desktop{
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+.load-more-mobile{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    &-button-loader {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 1rem;
+        & .loader {
+        border: 5px solid colors.$medium-white;
+        border-radius: 50%;
+        border-top: 5px solid colors.$medium-grey;
+        width: 40px;
+        height: 40px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+    }
+
+    @include for-desktop{
+        display: none;
+    }
+}

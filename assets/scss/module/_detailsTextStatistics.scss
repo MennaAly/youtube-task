@@ -1,0 +1,70 @@
+@use '../base/variables';
+@use '../base/mixins';
+@use "../base/colors";
+
+.details-text-statistics {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: inherit;
+  color: colors.$medium-grey;
+
+  & .likes-and-dislikes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  & .group-of-icons {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+
+    & .share-icon {
+      & p {
+        display: none;
+      }
+    }
+
+    & .more-icon {
+      display: none;
+    }
+    & .line-list {
+      display: none;
+    }
+  }
+
+  @include for-desktop {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    & .group-of-icons {
+      width: auto;
+
+      & .plus-icon {
+        display: none;
+      }
+
+      & .share-icon {
+        display: flex;
+        & p {
+          display: inline-block;
+        }
+      }
+
+      & .flag-icon {
+        display: none;
+      }
+
+      & .more-icon {
+        display: inline-block;
+      }
+
+      & .line-list {
+        display: inline-block;
+      }
+    }
+  }
+}

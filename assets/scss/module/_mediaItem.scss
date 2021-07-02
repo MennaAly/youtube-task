@@ -1,0 +1,116 @@
+@use "../base/colors";
+@use "../base/mixins";
+@import "../base/common";
+
+.media-item {
+  display: grid;
+  grid-template-columns: 10rem auto;
+  grid-template-rows: 7.5rem;
+  padding-left: 0.5rem;
+  overflow: hidden;
+
+  @include for-desktop {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding-left: 0px;
+    padding-bottom: 1rem;
+  }
+  &-image-video {
+    height: 6.25rem;
+
+    & img {
+      max-width: 100%;
+    }
+
+    @include for-desktop {
+      height: auto;
+      display: flex;
+
+      & img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-image-channel {
+    display: flex;
+    justify-content: center;
+    max-height: 50%;
+
+    & img {
+      max-width: 50%;
+    }
+
+    @include for-desktop {
+      display: flex;
+      justify-content: center;
+      max-height: 100%;
+    }
+  }
+
+  &-text {
+    height: 7.5rem;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    overflow: hidden;
+    padding-left: 1rem;
+
+    & p {
+      width: fit-content;
+      font-size: 0.8rem;
+      height: 2%;
+    }
+
+    & span p:first-of-type {
+      font-size: 0.8rem;
+      width: fit-content;
+      height: 1.6%;
+      color: colors.$medium-grey;
+    }
+    & span > &-dot,
+    &-published-date {
+      @extend .remove-content;
+    }
+
+    @include for-desktop {
+      display: flex;
+      flex-direction: column;
+      min-width: 60%;
+      & .title,
+      & .channel-details,
+      .media-item-description {
+        height: auto;
+        padding-right: 0.2rem;
+      }
+      & span {
+        display: flex;
+        color: colors.$medium-grey;
+      }
+      & span > &-dot,
+      &-published-date {
+        display: inline-block;
+      }
+      & span > &-dot {
+        height: 3px;
+        width: 3px;
+        background-color: colors.$medium-grey;
+        border-radius: 50%;
+        display: inline-block;
+        margin-bottom: 3px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-top: 10px;
+      }
+    }
+  }
+  &-text-description {
+    @extend .remove-content;
+
+    @include for-desktop {
+      display: flex;
+      color: colors.$medium-grey;
+      font-size: 0.8rem;
+      padding-top: 1rem;
+    }
+  }
+}

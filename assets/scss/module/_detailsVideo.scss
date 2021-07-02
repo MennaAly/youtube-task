@@ -1,0 +1,24 @@
+@use '../base/variables';
+@use '../base/colors';
+@use '../base/mixins';
+
+.details-video {
+  display: grid;
+  overflow: hidden;
+  max-width: variables.$mobile_max_break_point;
+
+  & iframe {
+    width: 100%;
+    border: 0;
+  }
+
+  @include for-desktop {
+    display: flex;
+    width: 100%;
+    height: 400px;
+
+    & iframe {
+      width: 100%;
+    }
+  }
+}

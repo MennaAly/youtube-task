@@ -1,0 +1,11 @@
+@use '../base/colors';
+
+.filter-drop-down{
+  display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    max-width: 40%;
+}
+.v-text-field.v-text-field--enclosed .v-text-field__details{
+  display: none;
+}

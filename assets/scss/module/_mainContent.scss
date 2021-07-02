@@ -1,0 +1,18 @@
+@use "../base/colors";
+@use "../base/mixins";
+
+.main-content {
+  width: 100vw;
+  overflow: hidden;
+  background-color: colors.$light-grey;
+  padding: 1rem;
+
+  @include for-desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    background-color: colors.$white;
+  }
+}

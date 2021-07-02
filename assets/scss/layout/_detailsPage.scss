@@ -1,0 +1,39 @@
+@use '../base/variables';
+@use '../base/colors';
+@use '../base/mixins';
+
+
+.l-details {
+  background-color: colors.$white;
+  display: grid;
+  color: colors.$light-black;
+
+  @include for-desktop {
+    background-color: colors.$white;
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    & .l-media-list {
+      & .media-item {
+        &-text {
+          & .channel-details {
+            & span,
+            & .media-item-text-published-date {
+              display: none;
+            }
+          }
+          &-description {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+i.v-icon.v-icon {
+  font-size: inherit;
+}

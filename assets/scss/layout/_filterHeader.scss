@@ -1,0 +1,28 @@
+@use '../base/mixins';
+
+.l-filter-header {
+  @include for-desktop {
+    width: 100%;
+  }
+  &-desktop {
+    display: none;
+
+    @include for-desktop {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 2rem;
+      padding-bottom: 0.5rem;
+
+      & span {
+        display: flex;
+      }
+    }
+  }
+  &-mobile {
+    display: flex;
+
+    @include for-desktop {
+      display: none;
+    }
+  }
+}

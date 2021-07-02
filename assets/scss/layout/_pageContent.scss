@@ -1,0 +1,15 @@
+@use "../base/mixins";
+@use "../base/colors";
+
+.page-content {
+  background-color: colors.$white;
+  min-height: 100vh;
+
+  @include for-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: colors.$light-grey;
+    width: 100%;
+  }
+}

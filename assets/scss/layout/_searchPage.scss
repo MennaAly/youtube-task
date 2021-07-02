@@ -1,0 +1,13 @@
+@use "../base/mixins";
+
+.l-search-page{
+    display: grid;
+    grid-template-rows: auto;
+
+    @include for-desktop{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       width: 70%;
+    }
+}
